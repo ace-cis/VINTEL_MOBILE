@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False" 
+             Shell.BackgroundColor="Coral"
+             x:Class="VCargo_Courier.Views.DeliveredDetailPage">
+    <ContentPage.Content>
+        <ScrollView HorizontalScrollBarVisibility="Always" >
+            <StackLayout  Padding="10" >
+                <Image Source="xamarin_logo.png" HeightRequest="100" WidthRequest="100" Margin="10"  BackgroundColor="Transparent" />
+                <Frame BorderColor="Gray"  >
+                    <Grid RowSpacing="0" ColumnSpacing="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"  />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <!--Row Border!-->
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <!--Column Border!-->
+                        <BoxView Grid.Column="1" Grid.Row="0" Grid.RowSpan="11"  BackgroundColor="Gray" WidthRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End"/>
+                        <Label Grid.Row="0" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title"   Text="HWB Date" ></Label>
+                        <Label Grid.Row="0" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding HWBDate,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="1" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="HWB No" ></Label>
+                        <Label Grid.Row="1" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding HWBNo,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="2" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="Shipper" ></Label>
+                        <Label Grid.Row="2" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding Shipper,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="3" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="Consignee" ></Label>
+                        <Label Grid.Row="3" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding Consignee,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="4" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="Destination" ></Label>
+                        <Label Grid.Row="4" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding Destination,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="5" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="Service Mode" ></Label>
+                        <Label Grid.Row="5" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding ServiceMode,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="6" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="Description" ></Label>
+                        <Label Grid.Row="6" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding Description,Mode=TwoWay}" ></Label>
+                      
+                        <Label Grid.Row="7" HorizontalTextAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title"  Text="TDD" ></Label>
+                        <Label Grid.Row="7" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title"  Text="{Binding HWBDate,Mode=TwoWay}" ></Label>
+                    </Grid>
+
+                </Frame>
+                <StackLayout >
+                    <Grid RowSpacing="15" ColumnSpacing="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition  />
+                            <RowDefinition  />
+                            <RowDefinition  />
+                            <RowDefinition  />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"  />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*"  />
+                            <ColumnDefinition Width="Auto"  />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                       
+                        <Button CornerRadius="5" 
+                                IsEnabled="{Binding IsEnabled,Mode=TwoWay}"
+                                Command="{Binding SetForDeliveryCommand}"
+                                Grid.Row="2" Grid.Column="1"  Text="Set for Delivery" ></Button>
+                        <Button 
+                                Command="{Binding DeliverCommand}"
+                                CornerRadius="5" 
+                                Grid.Row="2" Grid.Column="3"  Text="Delivered" ></Button>
+                        <Button 
+                                Command="{Binding FailedCommand}"
+                                IsVisible="{Binding IsVisible,Mode=TwoWay}"
+                                Grid.Row="3" 
+                                CornerRadius="5" 
+                                Grid.Column="3"  Text="Failed"></Button>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

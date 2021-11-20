@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:effects="clr-namespace:VCargo_Courier.Effects"
+             mc:Ignorable="d"
+             x:Class="VCargo_Courier.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <ScrollView HorizontalScrollBarVisibility="Always" >
+            <StackLayout Spacing="20" Padding="50" VerticalOptions="CenterAndExpand">
+                <Image Source="xamarin_logo.png" HeightRequest="130" WidthRequest="130"  BackgroundColor="Transparent" />
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent"  ></Frame>
+                <Label Text="User ID" FontAttributes="Bold"  FontSize="Body"  ></Label>
+                <Entry x:Name="Username" Text="{Binding UserName, Mode=TwoWay}"  BackgroundColor="WhiteSmoke"   WidthRequest="90" HorizontalTextAlignment="Start"  VerticalOptions="Center" >
+                    <Entry.Effects >
+                        <effects:PlainEntry/>
+                    </Entry.Effects>
+                </Entry>
+                <Label Text="Password" FontAttributes="Bold"  FontSize="Body"  ></Label>
+                <Entry x:Name="Password" Text="{Binding Password, Mode=TwoWay}"  BackgroundColor="WhiteSmoke"   WidthRequest="90" HorizontalTextAlignment="Start"  VerticalOptions="Center" IsPassword="True">
+                    <Entry.Effects >
+                        <effects:PlainEntry/>
+                    </Entry.Effects>
+                </Entry>
+                <Button BackgroundColor="Coral"   VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+                <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                    <ActivityIndicator x:Name="actIndicator2" />
+                </AbsoluteLayout>
+                <StackLayout  Orientation="Vertical"
+                Padding="40,10,40,10"
+                HeightRequest="20"
+                BackgroundColor="Transparent" 
+                VerticalOptions="Center"
+                Opacity="0.5">
+                    <Label FontSize="Micro"  Text="© Copyright 2021   Vintel Logistics Inc."
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+                    <Label FontSize="Micro" Text="All Rights Reserved"  HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

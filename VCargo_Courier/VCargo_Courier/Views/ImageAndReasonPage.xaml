@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:effects="clr-namespace:VCargo_Courier.Effects"
+             x:Class="VCargo_Courier.Views.ImageAndReasonPage">
+    <ContentPage.Content>
+        <ScrollView HorizontalScrollBarVisibility="Always" >
+            <StackLayout  Padding="10" >
+                <Image Source="xamarin_logo.png" HeightRequest="100" WidthRequest="100" Margin="10"  BackgroundColor="Transparent" />
+                <Picker TitleColor="Black"  
+                        ItemsSource="{Binding ReasonList,Mode=TwoWay }"
+                        ItemDisplayBinding="{Binding name}"
+                        SelectedItem="{Binding PickItem,Mode=TwoWay}"
+                        Title="Click here to choose Reason...."
+                        VerticalTextAlignment="Center" 
+                        HorizontalTextAlignment="Center"  
+                        BackgroundColor="WhiteSmoke" >
+
+                    <Picker.Effects >
+                        <effects:PlainEntry/>
+                    </Picker.Effects>
+                </Picker>
+                <Frame HeightRequest="300" WidthRequest="300" BorderColor="Gray"  >
+                    <ImageButton Aspect="AspectFit" 
+                                 Command="{Binding AddImage}" 
+                                 BackgroundColor="Transparent"  
+                                 Source="{Binding Source, Mode=TwoWay}"  >
+                    </ImageButton>
+                </Frame >
+                <Frame WidthRequest="50" HeightRequest="50" >
+                    <Entry HeightRequest="45" WidthRequest="45" Text="Remarks" >
+                        <Entry.Effects >
+                            <effects:PlainEntry/>
+                        </Entry.Effects>
+                    </Entry>
+                   
+                </Frame>
+                <Button x:Name="Submit" Margin="65"
+                                Command="{Binding SubmitCommand}"
+                                CornerRadius="5" 
+                                Text="Submit Reason" ></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

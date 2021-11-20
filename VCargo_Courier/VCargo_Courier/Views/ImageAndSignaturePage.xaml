@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms" 
+             xmlns:effects="clr-namespace:VCargo_Courier.Effects"
+             Shell.NavBarIsVisible="False" 
+             Shell.BackgroundColor="Coral"
+             
+             x:Class="VCargo_Courier.Views.ImageAndSignaturePage">
+    <ContentPage.Content>
+        <ScrollView HorizontalScrollBarVisibility="Always" >
+            <StackLayout  Padding="10" >
+                <Image Source="xamarin_logo.png" HeightRequest="50" WidthRequest="50" Margin="10"  BackgroundColor="Transparent" />
+                <Frame BorderColor="Gray"  >
+                    <Grid RowSpacing="0" ColumnSpacing="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"  />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <!--Row Border!-->
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" BackgroundColor="Gray" HeightRequest="1" VerticalOptions="End"  HorizontalOptions="FillAndExpand"/>
+                        <!--Column Border!-->
+                        <BoxView Grid.Column="1" Grid.Row="0" Grid.RowSpan="11"  BackgroundColor="Gray" WidthRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End"/>
+                        <Label IsVisible="false" Grid.Row="0" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title"   Text="{Binding Client, Mode=TwoWay}" ></Label>
+
+                        <Label Grid.Row="0" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title"   Text="HBW Date" ></Label>
+                        <Label Grid.Row="0" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding HWBDate,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="1" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="HBW No" ></Label>
+                        <Label Grid.Row="1" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding HWBNo,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="2" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="Consignee" ></Label>
+                        <Label Grid.Row="2" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding Consignee,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="3" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="Description" ></Label>
+                        <Label Grid.Row="3" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding Description,Mode=TwoWay}" ></Label>
+                        <Label Grid.Row="4" HorizontalTextAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" Text="TDD" ></Label>
+                        <Label Grid.Row="4" HorizontalTextAlignment="Center"  Grid.Column="2" Grid.ColumnSpan="4" FontSize="Title" Text="{Binding HWBDate,Mode=TwoWay}" ></Label>
+
+                    </Grid>
+
+                </Frame>
+                <Frame HeightRequest="150" WidthRequest="150" BorderColor="Gray"  >
+                    <ImageButton Aspect="AspectFit"  Command="{Binding AddImage}" BackgroundColor="Transparent"  Source="{Binding Source, Mode=TwoWay}"  ></ImageButton>
+                </Frame >
+                <Frame HeightRequest="150" WidthRequest="150" BorderColor="Gray" >
+                    <forms:SignaturePadView x:Name="signature" 
+                        BindingContext="{Binding Sign,Mode=TwoWay}"
+                        BackgroundColor="White" WidthRequest="150" 
+                        HeightRequest="150" StrokeColor="Black" StrokeWidth="3" />
+                </Frame >
+                <Entry Text="{Binding Receivername,Mode=TwoWay}" Placeholder="Receiver Name" BackgroundColor="WhiteSmoke" HorizontalTextAlignment="Center"  >
+                    <Entry.Effects >
+                        <effects:PlainEntry/>
+                    </Entry.Effects>
+                </Entry>
+                <Button x:Name="Submit" Margin="65" 
+                                
+                                Command="{Binding SubmitCommand}"
+                                CornerRadius="5" 
+                                Text="Submit" ></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
